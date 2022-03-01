@@ -1,0 +1,47 @@
+import android.app.*;
+import android.os.*;
+import android.view.*;
+import android.content.*;
+import android.graphics.*;
+
+public class MainActivity extends Activity 
+{
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(new myview(this));
+    }
+	private class myview extends View
+	{
+		public myview(Context context)
+		{
+			super(context);
+		}
+
+		@Override
+		protected void onDraw(Canvas canvas)
+		{
+			// TODO: Implement this method
+			super.onDraw(canvas);
+			Paint p=new Paint();
+			p.setTextSize(40);
+			p.setColor(Color.BLUE);
+			canvas.drawText("Circle",55,30,p);
+			p.setColor(Color.RED);
+			canvas.drawCircle(100,150,100,p);
+			p.setColor(Color.BLUE);
+			canvas.drawText("Rectangle",250,30,p);
+			p.setColor(Color.RED);
+			canvas.drawRect(250,50,400,350,p);
+			p.setColor(Color.BLUE);
+			canvas.drawText("Line",450,30,p);
+			p.setColor(Color.RED);
+			canvas.drawLine(450,50,500,300,p);
+			p.setColor(Color.BLUE);
+			canvas.drawText("Square",550,30,p);
+			p.setColor(Color.RED);
+			canvas.drawRect(600,50,700,150,p);
+		}
+	}
+}
